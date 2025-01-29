@@ -143,7 +143,7 @@ The data files required for this workshop are available on [GitHub](https://gith
 
 
 ## GREIN (GEO RNA-seq Experiments Interactive Navigator)
-In this tutorial, we will learn some R through creating plots to visualise data from an RNA-seq experiment. RNA-seq counts file can be obtained from the [GREIN platform](https://www.nature.com/articles/s41598-019-43935-8). GREIN provides >6,500 published datasets from GEO that have been uniformly processed. It is available at http://www.ilincs.org/apps/grein/. You can search for a dataset of interest using the GEO code. We obtained the dataset used here using the code GSE60450. GREIN provide QC metrics for the RNA-seq datasets and both raw and normalized counts. We will use the normalized counts here. These are the counts of reads for each gene for each sample normalized for differences in sequencing depth and composition bias. Generally, the higher the number of counts the more the gene is expressed.
+In this tutorial, we will learn some R through creating plots to visualise data from an RNA-seq experiment. RNA-seq counts file can be obtained from the [GREIN platform](https://www.nature.com/articles/s41598-019-43935-8). GREIN provides >6,500 published datasets from GEO that have been uniformly processed. It is available at https://www.ilincs.org/apps/grein/. You can search for a dataset of interest using the GEO code. We obtained the dataset used here using the code GSE60450. GREIN provide QC metrics for the RNA-seq datasets and both raw and normalized counts. We will use the normalized counts here. These are the counts of reads for each gene for each sample normalized for differences in sequencing depth and composition bias. Generally, the higher the number of counts the more the gene is expressed.
 \  
 \ 
 
@@ -495,7 +495,7 @@ The `geom_boxplot` function can also take in additional arguments. For example, 
 
 # Creating subplots for each gene
 
-With ggplot we can easily make subplots using *faceting*. For example we can make [stripcharts](http://www.sthda.com/english/wiki/ggplot2-stripchart-jitter-quick-start-guide-r-software-and-data-visualization). These are a type of scatterplot and are useful when there are a small number of samples (when there are not too many points to visualise). Here we will make stripcharts plotting expression by the groups (basal virgin, basal pregnant, basal lactating, luminal virgin, luminal pregnant, luminal lactating) for each gene. 
+With ggplot we can easily make subplots using *faceting*. For example we can make [stripcharts](https://www.sthda.com/english/wiki/ggplot2-stripchart-jitter-quick-start-guide-r-software-and-data-visualization). These are a type of scatterplot and are useful when there are a small number of samples (when there are not too many points to visualise). Here we will make stripcharts plotting expression by the groups (basal virgin, basal pregnant, basal lactating, luminal virgin, luminal pregnant, luminal lactating) for each gene. 
 
 ## Make shorter category names
 
@@ -724,7 +724,7 @@ We could do similar if we wanted to have the genes in the facets in a different 
 
 #### Exercise
 
-1. Make a colourblind-friendly plot using the colourblind-friendly palettes [here](http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette).
+1. Make a colourblind-friendly plot using the colourblind-friendly palettes [here](https://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette).
 
 2. Create a plot (any plot whatsoever) and share it with the class by pasting the image in the Google Docs link provided in your workshop. You plot should use the `subtitle` argument in the `labs` function to add a unique identifier (e.g. a message and your name or initials) which is displayed below the title.
 
@@ -770,7 +770,7 @@ dev.off()
 
 # Further Reading
 [A short intro to R and tidyverse](https://pmacdasci.github.io/r-intro-tidyverse/)  
-[Top 50 Ggplot Visualisations]( http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)  
+[Top 50 Ggplot Visualisations]( https://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)  
 [R for Data Science](https://r4ds.had.co.nz/)
 
 
