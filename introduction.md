@@ -156,7 +156,7 @@ The data files required for this workshop are available on [GitHub](https://gith
 
 
 ## GREIN (GEO RNA-seq Experiments Interactive Navigator)
-In this tutorial, we will learn some R through creating plots to visualise data from an RNA-seq experiment. RNA-seq counts file can be obtained from the [GREIN platform](https://www.nature.com/articles/s41598-019-43935-8). GREIN provides >6,500 published datasets from GEO that have been uniformly processed. It is available at http://www.ilincs.org/apps/grein/. You can search for a dataset of interest using the GEO code. We obtained the dataset used here using the code GSE60450. GREIN provide QC metrics for the RNA-seq datasets and both raw and normalized counts. We will use the normalized counts here. These are the counts of reads for each gene for each sample normalized for differences in sequencing depth and composition bias. Generally, the higher the number of counts the more the gene is expressed.
+In this tutorial, we will learn some R through creating plots to visualise data from an RNA-seq experiment. RNA-seq counts file can be obtained from the [GREIN platform](https://www.nature.com/articles/s41598-019-43935-8). GREIN provides >6,500 published datasets from GEO that have been uniformly processed. It is available at https://www.ilincs.org/apps/grein/. You can search for a dataset of interest using the GEO code. We obtained the dataset used here using the code GSE60450. GREIN provide QC metrics for the RNA-seq datasets and both raw and normalized counts. We will use the normalized counts here. These are the counts of reads for each gene for each sample normalized for differences in sequencing depth and composition bias. Generally, the higher the number of counts the more the gene is expressed.
 \  
 \ 
 
@@ -211,8 +211,16 @@ We can read the counts file into R with the command below. We'll store the conte
 counts <- read_csv("data/GSE60450_GeneLevel_Normalized(CPM.and.TMM)_data.csv")
 ```
 
-``` error
-Error: 'data/GSE60450_GeneLevel_Normalized(CPM.and.TMM)_data.csv' does not exist in current working directory ('/home/runner/work/intro-to-R/intro-to-R/site/built').
+``` output
+New names:
+Rows: 23735 Columns: 14
+── Column specification
+──────────────────────────────────────────────────────── Delimiter: "," chr
+(2): ...1, gene_symbol dbl (12): GSM1480291, GSM1480292, GSM1480293,
+GSM1480294, GSM1480295, GSM148...
+ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+Specify the column types or set `show_col_types = FALSE` to quiet this message.
+• `` -> `...1`
 ```
 
 ``` r
@@ -220,8 +228,15 @@ Error: 'data/GSE60450_GeneLevel_Normalized(CPM.and.TMM)_data.csv' does not exist
 sampleinfo <- read_csv("data/GSE60450_filtered_metadata.csv")
 ```
 
-``` error
-Error: 'data/GSE60450_filtered_metadata.csv' does not exist in current working directory ('/home/runner/work/intro-to-R/intro-to-R/site/built').
+``` output
+New names:
+Rows: 12 Columns: 4
+── Column specification
+──────────────────────────────────────────────────────── Delimiter: "," chr
+(4): ...1, characteristics, immunophenotype, developmental stage
+ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+Specify the column types or set `show_col_types = FALSE` to quiet this message.
+• `` -> `...1`
 ```
 
 There is some information output by read_csv on "column specification". It tells us that there is a missing header and it has been filled with the name "X1". It also tells us what data types read_csv is detecting in each column. Columns with text charactershave been detected (col_character) and also columns with numbers (col_double). We won't get into the details of R data types in this tutorial but they are important to know and you can read more about them in the [R for Data Science book](https://r4ds.had.co.nz/vectors.html#important-types-of-atomic-vector).
@@ -283,8 +298,22 @@ We can type the name of the object and this will print the first few lines and s
 sampleinfo
 ```
 
-``` error
-Error: object 'sampleinfo' not found
+``` output
+# A tibble: 12 × 4
+   ...1       characteristics              immunophenotype `developmental stage`
+   <chr>      <chr>                        <chr>           <chr>                
+ 1 GSM1480291 mammary gland, luminal cell… luminal cell p… virgin               
+ 2 GSM1480292 mammary gland, luminal cell… luminal cell p… virgin               
+ 3 GSM1480293 mammary gland, luminal cell… luminal cell p… 18.5 day pregnancy   
+ 4 GSM1480294 mammary gland, luminal cell… luminal cell p… 18.5 day pregnancy   
+ 5 GSM1480295 mammary gland, luminal cell… luminal cell p… 2 day lactation      
+ 6 GSM1480296 mammary gland, luminal cell… luminal cell p… 2 day lactation      
+ 7 GSM1480297 mammary gland, basal cells,… basal cell pop… virgin               
+ 8 GSM1480298 mammary gland, basal cells,… basal cell pop… virgin               
+ 9 GSM1480299 mammary gland, basal cells,… basal cell pop… 18.5 day pregnancy   
+10 GSM1480300 mammary gland, basal cells,… basal cell pop… 18.5 day pregnancy   
+11 GSM1480301 mammary gland, basal cells,… basal cell pop… 2 day lactation      
+12 GSM1480302 mammary gland, basal cells,… basal cell pop… 2 day lactation      
 ```
 
 We can also use `dim()` to see the dimensions of an object, the number of rows and columns.
@@ -294,8 +323,8 @@ We can also use `dim()` to see the dimensions of an object, the number of rows a
 dim(sampleinfo)
 ```
 
-``` error
-Error: object 'sampleinfo' not found
+``` output
+[1] 12  4
 ```
 
 This show us there are 12 rows and 4 columns.
@@ -309,8 +338,16 @@ We can also take a look the first few lines with `head()`. This shows us the fir
 head(sampleinfo)
 ```
 
-``` error
-Error: object 'sampleinfo' not found
+``` output
+# A tibble: 6 × 4
+  ...1       characteristics               immunophenotype `developmental stage`
+  <chr>      <chr>                         <chr>           <chr>                
+1 GSM1480291 mammary gland, luminal cells… luminal cell p… virgin               
+2 GSM1480292 mammary gland, luminal cells… luminal cell p… virgin               
+3 GSM1480293 mammary gland, luminal cells… luminal cell p… 18.5 day pregnancy   
+4 GSM1480294 mammary gland, luminal cells… luminal cell p… 18.5 day pregnancy   
+5 GSM1480295 mammary gland, luminal cells… luminal cell p… 2 day lactation      
+6 GSM1480296 mammary gland, luminal cells… luminal cell p… 2 day lactation      
 ```
 
 We can look at the last few lines with `tail()`. This shows us the last 6 lines. This can be useful to check the bottom of the file, that it looks ok.
@@ -319,8 +356,16 @@ We can look at the last few lines with `tail()`. This shows us the last 6 lines.
 tail(sampleinfo)
 ```
 
-``` error
-Error: object 'sampleinfo' not found
+``` output
+# A tibble: 6 × 4
+  ...1       characteristics               immunophenotype `developmental stage`
+  <chr>      <chr>                         <chr>           <chr>                
+1 GSM1480297 mammary gland, basal cells, … basal cell pop… virgin               
+2 GSM1480298 mammary gland, basal cells, … basal cell pop… virgin               
+3 GSM1480299 mammary gland, basal cells, … basal cell pop… 18.5 day pregnancy   
+4 GSM1480300 mammary gland, basal cells, … basal cell pop… 18.5 day pregnancy   
+5 GSM1480301 mammary gland, basal cells, … basal cell pop… 2 day lactation      
+6 GSM1480302 mammary gland, basal cells, … basal cell pop… 2 day lactation      
 ```
 
 Or we can see the whole file with `View()`.
@@ -338,8 +383,9 @@ We can see all the column names with `colnames()`.
 colnames(sampleinfo)
 ```
 
-``` error
-Error: object 'sampleinfo' not found
+``` output
+[1] "...1"                "characteristics"     "immunophenotype"    
+[4] "developmental stage"
 ```
 
 We can access individual columns by name using the `$` symbol. For example we can see what's contained in column X1.
@@ -349,8 +395,12 @@ We can access individual columns by name using the `$` symbol. For example we ca
 sampleinfo$X1
 ```
 
-``` error
-Error: object 'sampleinfo' not found
+``` warning
+Warning: Unknown or uninitialised column: `X1`.
+```
+
+``` output
+NULL
 ```
 
 If we just wanted to see the first 3 values in the column we can specify this using square brackets.
@@ -360,8 +410,12 @@ If we just wanted to see the first 3 values in the column we can specify this us
 sampleinfo$X1[1:3]
 ```
 
-``` error
-Error: object 'sampleinfo' not found
+``` warning
+Warning: Unknown or uninitialised column: `X1`.
+```
+
+``` output
+NULL
 ```
 
 Other useful commands for checking data are `str()` and `summary()`.
@@ -373,8 +427,20 @@ Other useful commands for checking data are `str()` and `summary()`.
 str(sampleinfo)
 ```
 
-``` error
-Error: object 'sampleinfo' not found
+``` output
+spc_tbl_ [12 × 4] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ ...1               : chr [1:12] "GSM1480291" "GSM1480292" "GSM1480293" "GSM1480294" ...
+ $ characteristics    : chr [1:12] "mammary gland, luminal cells, virgin" "mammary gland, luminal cells, virgin" "mammary gland, luminal cells, 18.5 day pregnancy" "mammary gland, luminal cells, 18.5 day pregnancy" ...
+ $ immunophenotype    : chr [1:12] "luminal cell population" "luminal cell population" "luminal cell population" "luminal cell population" ...
+ $ developmental stage: chr [1:12] "virgin" "virgin" "18.5 day pregnancy" "18.5 day pregnancy" ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   ...1 = col_character(),
+  ..   characteristics = col_character(),
+  ..   immunophenotype = col_character(),
+  ..   `developmental stage` = col_character()
+  .. )
+ - attr(*, "problems")=<externalptr> 
 ```
 
 `summary()` generates summary statistics of our data. For numeric columns (columns of type double or integer) it outputs statistics such as the min, max, mean and median. We will demonstrate this with the counts file as it contains numeric data. For character columns it shows us the length (how many rows).
@@ -384,8 +450,35 @@ Error: object 'sampleinfo' not found
 summary(counts)
 ```
 
-``` error
-Error: object 'counts' not found
+``` output
+     ...1           gene_symbol          GSM1480291          GSM1480292       
+ Length:23735       Length:23735       Min.   :    0.000   Min.   :    0.000  
+ Class :character   Class :character   1st Qu.:    0.000   1st Qu.:    0.000  
+ Mode  :character   Mode  :character   Median :    1.745   Median :    1.891  
+                                       Mean   :   42.132   Mean   :   42.132  
+                                       3rd Qu.:   29.840   3rd Qu.:   29.604  
+                                       Max.   :12525.066   Max.   :12416.211  
+   GSM1480293         GSM1480294         GSM1480295          GSM1480296       
+ Min.   :    0.00   Min.   :    0.00   Min.   :     0.00   Min.   :     0.00  
+ 1st Qu.:    0.00   1st Qu.:    0.00   1st Qu.:     0.00   1st Qu.:     0.00  
+ Median :    0.92   Median :    0.89   Median :     0.58   Median :     0.54  
+ Mean   :   42.13   Mean   :   42.13   Mean   :    42.13   Mean   :    42.13  
+ 3rd Qu.:   21.91   3rd Qu.:   19.92   3rd Qu.:    12.27   3rd Qu.:    12.28  
+ Max.   :49191.15   Max.   :55692.09   Max.   :111850.87   Max.   :108726.08  
+   GSM1480297          GSM1480298          GSM1480299       
+ Min.   :    0.000   Min.   :    0.000   Min.   :    0.000  
+ 1st Qu.:    0.000   1st Qu.:    0.000   1st Qu.:    0.000  
+ Median :    2.158   Median :    2.254   Median :    1.854  
+ Mean   :   42.132   Mean   :   42.132   Mean   :   42.132  
+ 3rd Qu.:   27.414   3rd Qu.:   26.450   3rd Qu.:   24.860  
+ Max.   :10489.311   Max.   :10662.486   Max.   :15194.048  
+   GSM1480300          GSM1480301          GSM1480302       
+ Min.   :    0.000   Min.   :    0.000   Min.   :    0.000  
+ 1st Qu.:    0.000   1st Qu.:    0.000   1st Qu.:    0.000  
+ Median :    1.816   Median :    1.629   Median :    1.749  
+ Mean   :   42.132   Mean   :   42.132   Mean   :   42.132  
+ 3rd Qu.:   23.443   3rd Qu.:   23.443   3rd Qu.:   24.818  
+ Max.   :17434.935   Max.   :19152.728   Max.   :15997.193  
 ```
 
 
@@ -405,10 +498,6 @@ seqdata <- pivot_longer(counts, cols = starts_with("GSM"), names_to = "Sample",
                         values_to = "Count")
 ```
 
-``` error
-Error: object 'counts' not found
-```
-
 We use `cols = starts_with("GSM")` to tell the function we want to reformat the columns whose names start with "GSM". `pivot_longer()` will then reformat the specified columns into two new columns, which we're naming "Sample" and "Count". The `names_to = "Sample"` specifies that we want the new column containing the columns we sepcified with `cols` to be named "Sample", and the `values_to = "Count"` specifies that we want the new column contining the values to be named "Count".
 
 We could also specify a column range to reformat. The command below would give us the same result as the previous command.
@@ -417,10 +506,6 @@ We could also specify a column range to reformat. The command below would give u
 ``` r
 seqdata <- pivot_longer(counts, cols = GSM1480291:GSM1480302, 
                         names_to = "Sample", values_to = "Count")
-```
-
-``` error
-Error: object 'counts' not found
 ```
 
 Alternatively, we could specify the columns we *don't* want to reformat and `pivot_longer()` will reformat all the other columns. To do that we put a minus sign "-" in front of the column names that we don't want to reformat. This is a pretty common way to use `pivot_longer()` as sometimes it is easier to exclude columns we don't want than include columns we do. The command below would give us the same result as the previous command.
@@ -432,7 +517,9 @@ seqdata <- pivot_longer(counts, cols = -c("X1", "gene_symbol"),
 ```
 
 ``` error
-Error: object 'counts' not found
+Error in `pivot_longer()`:
+! Can't select columns that don't exist.
+✖ Column `X1` doesn't exist.
 ```
 
 Here we see the function `c()` for the first time. We use this function extremely often in R when we have multiple items that we are *combining*. We will see it again in this tutorial.
@@ -443,8 +530,21 @@ Let's have a look at the data.
 seqdata
 ```
 
-``` error
-Error: object 'seqdata' not found
+``` output
+# A tibble: 284,820 × 4
+   ...1               gene_symbol Sample     Count
+   <chr>              <chr>       <chr>      <dbl>
+ 1 ENSMUSG00000000001 Gnai3       GSM1480291 243. 
+ 2 ENSMUSG00000000001 Gnai3       GSM1480292 256. 
+ 3 ENSMUSG00000000001 Gnai3       GSM1480293 240. 
+ 4 ENSMUSG00000000001 Gnai3       GSM1480294 217. 
+ 5 ENSMUSG00000000001 Gnai3       GSM1480295  84.7
+ 6 ENSMUSG00000000001 Gnai3       GSM1480296  84.6
+ 7 ENSMUSG00000000001 Gnai3       GSM1480297 175. 
+ 8 ENSMUSG00000000001 Gnai3       GSM1480298 187. 
+ 9 ENSMUSG00000000001 Gnai3       GSM1480299 177. 
+10 ENSMUSG00000000001 Gnai3       GSM1480300 169. 
+# ℹ 284,810 more rows
 ```
 
 ## Joining two tables
@@ -461,7 +561,9 @@ allinfo <- full_join(seqdata, sampleinfo, by = c("Sample" = "X1"))
 ```
 
 ``` error
-Error: object 'seqdata' not found
+Error in `full_join()`:
+! Join columns in `y` must be present in the data.
+✖ Problem with `X1`.
 ```
 
 Let's have a look at the data.
@@ -621,7 +723,7 @@ The `geom_boxplot` function can also take in additional arguments. For example, 
 
 # Creating subplots for each gene
 
-With ggplot we can easily make subplots using *faceting*. For example we can make [stripcharts](http://www.sthda.com/english/wiki/ggplot2-stripchart-jitter-quick-start-guide-r-software-and-data-visualization). These are a type of scatterplot and are useful when there are a small number of samples (when there are not too many points to visualise). Here we will make stripcharts plotting expression by the groups (basal virgin, basal pregnant, basal lactating, luminal virgin, luminal pregnant, luminal lactating) for each gene. 
+With ggplot we can easily make subplots using *faceting*. For example we can make [stripcharts](https://www.sthda.com/english/wiki/ggplot2-stripchart-jitter-quick-start-guide-r-software-and-data-visualization). These are a type of scatterplot and are useful when there are a small number of samples (when there are not too many points to visualise). Here we will make stripcharts plotting expression by the groups (basal virgin, basal pregnant, basal lactating, luminal virgin, luminal pregnant, luminal lactating) for each gene. 
 
 ## Make shorter category names
 
@@ -948,7 +1050,7 @@ We could do similar if we wanted to have the genes in the facets in a different 
 
 #### Exercise
 
-1. Make a colourblind-friendly plot using the colourblind-friendly palettes [here](http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette).
+1. Make a colourblind-friendly plot using the colourblind-friendly palettes [here](https://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette).
 
 2. Create a plot (any plot whatsoever) and share it with the class by pasting the image in the Google Docs link provided in your workshop. You plot should use the `subtitle` argument in the `labs` function to add a unique identifier (e.g. a message and your name or initials) which is displayed below the title.
 
@@ -995,117 +1097,14 @@ dev.off()
 
 # Further Reading
 [A short intro to R and tidyverse](https://pmacdasci.github.io/r-intro-tidyverse/)  
-[Top 50 Ggplot Visualisations]( http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)  
+[Top 50 Ggplot Visualisations]( https://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)  
 [R for Data Science](https://r4ds.had.co.nz/)
 
-## Introduction
-
-This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.txt) for static files and
-[R Markdown][r-markdown] for dynamic files that can render code into output. 
-Please refer to the [Introduction to The Carpentries 
-Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
-
-What you need to know is that there are three sections required for a valid
-Carpentries lesson template:
-
- 1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
-    objectives.
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
-
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::: challenge 
-
-## Challenge 1: Can you do it?
-
-What is the output of this command?
-
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
-
-:::::::::::::::::::::::: solution 
-
-## Output
- 
-```output
-[1] "This new lesson looks good"
-```
-
-:::::::::::::::::::::::::::::::::
-
-
-## Challenge 2: how do you nest solutions within challenge blocks?
-
-:::::::::::::::::::::::: solution 
-
-You can add a line with at least three colons and a `solution` tag.
-
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-## Figures
-
-You can also include figures generated from R Markdown:
-
-
-``` r
-pie(
-  c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5), 
-  init.angle = 315, 
-  col = c("deepskyblue", "yellow", "yellow3"), 
-  border = FALSE
-)
-```
-
-<div class="figure" style="text-align: center">
-<img src="fig/introduction-rendered-pyramid-1.png" alt="pie chart illusion of a pyramid"  />
-<p class="caption">Sun arise each and every morning</p>
-</div>
-
-Or you can use standard markdown for static figures with the following syntax:
-
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
-
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
-
-::::::::::::::::::::::::::::::::::::: callout
-
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-## Math
-
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
-
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
-
-Cool, right?
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+- Keypoint 1
+- Keypoint 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
