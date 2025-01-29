@@ -239,19 +239,25 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 • `` -> `...1`
 ```
 
-There is some information output by read_csv on "column specification". It tells us that there is a missing header and it has been filled with the name "X1". It also tells us what data types read_csv is detecting in each column. Columns with text charactershave been detected (col_character) and also columns with numbers (col_double). We won't get into the details of R data types in this tutorial but they are important to know and you can read more about them in the [R for Data Science book](https://r4ds.had.co.nz/vectors.html#important-types-of-atomic-vector).
+There is some information output by read_csv on "column specification". It tells us that there is a missing header and it has been filled with the name "...1". It also tells us what data types read_csv is detecting in each column. Columns with text charactershave been detected (col_character) and also columns with numbers (col_double). We won't get into the details of R data types in this tutorial but they are important to know and you can read more about them in the [R for Data Science book](https://r4ds.had.co.nz/vectors.html#important-types-of-atomic-vector).
 
 In R we use `<-` to assign values to objects. `<-` is the **assignment operator**.  It assigns values on the right to objects on the left. So to create an object, we need to give it a name (e.g. `counts`), followed by the assignment operator `<-`, and the value we want to give it. We can give an object almost any name we want but there are some rules and conventions as described in the [tidyverse R style guide](https://style.tidyverse.org/syntax.html#object-names)
 
 We can read in a file from a path on our computer on on the web and use this as the value. Note that we need to put quotes ("") around file paths.
 
-> #### Assignment operator shortcut
-> In RStudio, typing <kbd>Alt</kbd> + <kbd>-</kbd> (holding down <kbd>Alt</kbd> at the
-> same time as the <kbd>-</kbd> key) will write ` <- ` in a single keystroke in Windows, while typing > <kbd>Option</kbd> + <kbd>-</kbd> (holding down <kbd>Option</kbd> at the
-> same time as the <kbd>-</kbd> key) does the same in a Mac. 
+::::::::::::::::::::::::::::::::::::: callout
+
+#### Assignment operator shortcut
+In RStudio, typing <kbd>Alt</kbd> + <kbd>-</kbd> (holding down <kbd>Alt</kbd> at the
+same time as the <kbd>-</kbd> key) will write ` <- ` in a single keystroke in Windows, while typing > <kbd>Option</kbd> + <kbd>-</kbd> (holding down <kbd>Option</kbd> at the
+same time as the <kbd>-</kbd> key) does the same in a Mac. 
+
+:::::::::::::::::::::::::::::::::::::
 
 
-#### Exercise
+::::::::::::::::::::::::::::::::::::: challenge
+
+#### Exercises
 
 1. Test what happens if you type 
 `Library(tidyverse)`  
@@ -285,6 +291,8 @@ and
 8. If you run  
 `read_csv("data/GSE60450_filtered_metadata.csv")`  
 what is the difference between the column header you see `developmental stage` and 'developmental stage'?  
+
+:::::::::::::::::::::::::::::::::
 
 
 # Getting to know the data
@@ -388,34 +396,28 @@ colnames(sampleinfo)
 [4] "developmental stage"
 ```
 
-We can access individual columns by name using the `$` symbol. For example we can see what's contained in column X1.
+We can access individual columns by name using the `$` symbol. For example we can see what's contained in column ...1.
 
 
 ``` r
-sampleinfo$X1
-```
-
-``` warning
-Warning: Unknown or uninitialised column: `X1`.
+sampleinfo$...1
 ```
 
 ``` output
-NULL
+ [1] "GSM1480291" "GSM1480292" "GSM1480293" "GSM1480294" "GSM1480295"
+ [6] "GSM1480296" "GSM1480297" "GSM1480298" "GSM1480299" "GSM1480300"
+[11] "GSM1480301" "GSM1480302"
 ```
 
 If we just wanted to see the first 3 values in the column we can specify this using square brackets.
 
 
 ``` r
-sampleinfo$X1[1:3]
-```
-
-``` warning
-Warning: Unknown or uninitialised column: `X1`.
+sampleinfo$...1[1:3]
 ```
 
 ``` output
-NULL
+[1] "GSM1480291" "GSM1480292" "GSM1480293"
 ```
 
 Other useful commands for checking data are `str()` and `summary()`.
@@ -512,14 +514,8 @@ Alternatively, we could specify the columns we *don't* want to reformat and `piv
 
 
 ``` r
-seqdata <- pivot_longer(counts, cols = -c("X1", "gene_symbol"), 
+seqdata <- pivot_longer(counts, cols = -c("...1", "gene_symbol"), 
                         names_to = "Sample", values_to = "Count")
-```
-
-``` error
-Error in `pivot_longer()`:
-! Can't select columns that don't exist.
-✖ Column `X1` doesn't exist.
 ```
 
 Here we see the function `c()` for the first time. We use this function extremely often in R when we have multiple items that we are *combining*. We will see it again in this tutorial.
@@ -553,17 +549,11 @@ Now that we've got just one column containing sample ids in both our counts and 
 
 ![](fig/join_data.png)
 
-We will use the function `full_join()` and give it the two tables we want to join. We add `by = c("Sample" = "X1")` to say we want to join on the column called "Sample"" in the first table (`seqdata`) and the column called "X1" in the second table (`sampleinfo`)
+We will use the function `full_join()` and give it the two tables we want to join. We add `by = c("Sample" = "...1")` to say we want to join on the column called "Sample"" in the first table (`seqdata`) and the column called "...1" in the second table (`sampleinfo`)
 
 
 ``` r
-allinfo <- full_join(seqdata, sampleinfo, by = c("Sample" = "X1"))
-```
-
-``` error
-Error in `full_join()`:
-! Join columns in `y` must be present in the data.
-✖ Problem with `X1`.
+allinfo <- full_join(seqdata, sampleinfo, by = c("Sample" = "...1"))
 ```
 
 Let's have a look at the data.
@@ -572,11 +562,27 @@ Let's have a look at the data.
 allinfo
 ```
 
-``` error
-Error: object 'allinfo' not found
+``` output
+# A tibble: 284,820 × 7
+   ...1               gene_symbol Sample   Count characteristics immunophenotype
+   <chr>              <chr>       <chr>    <dbl> <chr>           <chr>          
+ 1 ENSMUSG00000000001 Gnai3       GSM1480… 243.  mammary gland,… luminal cell p…
+ 2 ENSMUSG00000000001 Gnai3       GSM1480… 256.  mammary gland,… luminal cell p…
+ 3 ENSMUSG00000000001 Gnai3       GSM1480… 240.  mammary gland,… luminal cell p…
+ 4 ENSMUSG00000000001 Gnai3       GSM1480… 217.  mammary gland,… luminal cell p…
+ 5 ENSMUSG00000000001 Gnai3       GSM1480…  84.7 mammary gland,… luminal cell p…
+ 6 ENSMUSG00000000001 Gnai3       GSM1480…  84.6 mammary gland,… luminal cell p…
+ 7 ENSMUSG00000000001 Gnai3       GSM1480… 175.  mammary gland,… basal cell pop…
+ 8 ENSMUSG00000000001 Gnai3       GSM1480… 187.  mammary gland,… basal cell pop…
+ 9 ENSMUSG00000000001 Gnai3       GSM1480… 177.  mammary gland,… basal cell pop…
+10 ENSMUSG00000000001 Gnai3       GSM1480… 169.  mammary gland,… basal cell pop…
+# ℹ 284,810 more rows
+# ℹ 1 more variable: `developmental stage` <chr>
 ```
 
 The two tables have been joined.
+
+::::::::::::::::::::::::::::::::::::: challenge
 
 #### Exercise
 
@@ -585,26 +591,55 @@ The two tables have been joined.
 3. View the values in the `GSM1480291` column from your `subset_counts` object using the `$` subsetting method. What is the 5th value?  
 4. View the help page of the `mean` function. What is the mean of the column of values you obtained from the previous question?  
 5. How can you use `pivot_longer` to transform `dat` into a ‘tidy’ data called `dat_long` that contains 3 columns (sample, experiment, count).
-```
+
+``` r
 dat <-  tibble(sample = 1:10,
              experiment_1 = rnorm(10),
              experiment_2 = rnorm(10))
-```             
-`dat_long` should look similar to what you get if you paste this into the console (the values in the count column will be different):
 ```
+`dat_long` should look similar to what you get if you paste this into the console (the values in the count column will be different):
+
+``` r
 dat_long <- tibble(sample = rep(1:10, each=2),
 experiment = rep(c("experiment_1", "experiment_2"), 10),
 count = rnorm(20))
 dat_long
 ```
-6. If you have another table with sample information such as 
+
+``` output
+# A tibble: 20 × 3
+   sample experiment    count
+    <int> <chr>         <dbl>
+ 1      1 experiment_1 -0.609
+ 2      1 experiment_2  0.948
+ 3      2 experiment_1 -0.677
+ 4      2 experiment_2  0.562
+ 5      3 experiment_1  0.563
+ 6      3 experiment_2  0.350
+ 7      4 experiment_1 -0.596
+ 8      4 experiment_2  0.627
+ 9      5 experiment_1  1.88 
+10      5 experiment_2 -0.572
+11      6 experiment_1 -1.33 
+12      6 experiment_2 -0.398
+13      7 experiment_1  0.423
+14      7 experiment_2  0.651
+15      8 experiment_1 -1.36 
+16      8 experiment_2  0.821
+17      9 experiment_1  0.354
+18      9 experiment_2 -1.60 
+19     10 experiment_1 -1.02 
+20     10 experiment_2 -1.58 
 ```
+6. If you have another table with sample information such as 
+
+``` r
 sampleinfo <- tibble(sample = 1:100,
 group = c(rep("Mutant", 50), rep("Control", 50)))
 ```
 Join `dat_long` to `sampleinfo` using the common column called sample. How many rows do you get if you use i) `full_join`, ii) `left_join`, iii)  `right_join`, iv) `inner_join`?
 
-
+::::::::::::::::::::::::::::::::::::: 
 
 # Plotting with **`ggplot2`**
 
@@ -636,9 +671,7 @@ ggplot(data = allinfo, mapping = aes(x = Sample, y = Count)) +
   geom_boxplot()
 ```
 
-``` error
-Error: object 'allinfo' not found
-```
+<img src="fig/introduction-rendered-unnamed-chunk-27-1.png" style="display: block; margin: auto;" />
 
 We have generated our first plot!
 
@@ -650,9 +683,12 @@ ggplot(data = allinfo, mapping = aes(x = Sample, y = log2(Count))) +
   geom_boxplot()
 ```
 
-``` error
-Error: object 'allinfo' not found
+``` warning
+Warning: Removed 84054 rows containing non-finite outside the scale range
+(`stat_boxplot()`).
 ```
+
+<img src="fig/introduction-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" />
 
 We get a warning here about rows containing non-finite values being removed. This is because some of the genes have a count of zero in the samples and a log of zero is undefined. We can add a small number to every count to avoid the zeros being dropped.
 
@@ -662,16 +698,18 @@ ggplot(data = allinfo, mapping = aes(x = Sample, y = log2(Count + 1))) +
   geom_boxplot()
 ```
 
-``` error
-Error: object 'allinfo' not found
-```
+<img src="fig/introduction-rendered-unnamed-chunk-29-1.png" style="display: block; margin: auto;" />
 
 The box plots show that the distributions of the samples are not identical but they are not very different.
 
 Box plots are useful summaries, but hide the shape of the distribution. For example, if the distribution is bimodal, we would not see it in a boxplot. An alternative to the boxplot is the **violin plot**, where the shape (of the density of points) is drawn. See [here](https://blog.bioturing.com/2018/05/16/5-reasons-you-should-use-a-violin-graph/) for an example of how differences in distribution may be hidden in box plots but revealed with violin plots.
 
+::::::::::::::::::::::::::::::::::::: challenge
+
 #### Exercise
 You can easily make different types of plots with ggplot by using different geoms. Using the same data (same x and y values), try editing the code above to make a violin plot (Hint: there's a `geom_violin`)
+
+:::::::::::::::::::::::::::::::::::::
 
 
 # Colouring by categories
@@ -686,9 +724,7 @@ ggplot(data = allinfo, mapping = aes(x = Sample, y = log2(Count + 1), colour = S
   geom_boxplot()
 ```
 
-``` error
-Error: object 'allinfo' not found
-```
+<img src="fig/introduction-rendered-unnamed-chunk-30-1.png" style="display: block; margin: auto;" />
 
 Colouring the edges wasn’t quite what we had in mind. Look at the help for `geom_boxplot` to see what other aesthetic we could use. Let's try `fill = ` instead.
 
@@ -698,13 +734,13 @@ ggplot(data = allinfo, mapping = aes(x = Sample, y = log2(Count + 1), fill = Sam
   geom_boxplot()
 ```
 
-``` error
-Error: object 'allinfo' not found
-```
+<img src="fig/introduction-rendered-unnamed-chunk-31-1.png" style="display: block; margin: auto;" />
 
 That looks better. `fill = ` is used to **fill** in areas in ggplot2 plots, whereas `colour = ` is used to colour lines and points.
 
 A really nice feature about ggplot is that we can easily colour by another variable by simply changing the column we give to `fill = `.
+
+::::::::::::::::::::::::::::::::::::: challenge
 
 #### Exercise 
 Modify the plot above. Colour by other variables (columns) in the metadata file:
@@ -715,10 +751,11 @@ Modify the plot above. Colour by other variables (columns) in the metadata file:
 
 _Note: backticks are not single quotes (\'\'). The backtick key is usually at the top left corner of a laptop keyboard under the ESC key. Check what happens if you don't use backticks.)_
 
-
 #### Optional exercise
 
 The `geom_boxplot` function can also take in additional arguments. For example, you can decrease the size of the outlier points by using the `outlier.size` argument like so: `geom_boxplot(outlier.size = 0.5)`. View the help page for `geom_boxplot`. Can you find a way to hide outliers altogether? Plot a boxplot with hidden outliers.
+
+:::::::::::::::::::::::::::::::::::::
 
 
 # Creating subplots for each gene
@@ -741,10 +778,6 @@ allinfo <- mutate(allinfo, Group = case_when(
        ))
 ```
 
-``` error
-Error: object 'allinfo' not found
-```
-
 Have a look at this data using `head()`. You should see a new column called `Group` has been added to the end.
 
 
@@ -752,8 +785,17 @@ Have a look at this data using `head()`. You should see a new column called `Gro
 head(allinfo)
 ```
 
-``` error
-Error: object 'allinfo' not found
+``` output
+# A tibble: 6 × 8
+  ...1               gene_symbol Sample    Count characteristics immunophenotype
+  <chr>              <chr>       <chr>     <dbl> <chr>           <chr>          
+1 ENSMUSG00000000001 Gnai3       GSM14802… 243.  mammary gland,… luminal cell p…
+2 ENSMUSG00000000001 Gnai3       GSM14802… 256.  mammary gland,… luminal cell p…
+3 ENSMUSG00000000001 Gnai3       GSM14802… 240.  mammary gland,… luminal cell p…
+4 ENSMUSG00000000001 Gnai3       GSM14802… 217.  mammary gland,… luminal cell p…
+5 ENSMUSG00000000001 Gnai3       GSM14802…  84.7 mammary gland,… luminal cell p…
+6 ENSMUSG00000000001 Gnai3       GSM14802…  84.6 mammary gland,… luminal cell p…
+# ℹ 2 more variables: `developmental stage` <chr>, Group <chr>
 ```
 
 ## Filter for genes of interest
@@ -765,7 +807,7 @@ We can make plots for a set of given genes.
 
 
 ``` r
-mygenes <- c("Csn1s2a", "Csn1s1", "Csn2", "Glycam1", "COX1", "Trf", "Wap", "Eef1a1")
+mygenes <- c("Csn1s2a", "Csn1s1", "Csn2", "Glycam1", "CO...1", "Trf", "Wap", "Eef1a1")
 ```
 
 
@@ -776,10 +818,6 @@ We filter our data for just these genes of interest. We use `%in%` to check if a
 
 ``` r
 mygenes_counts <- filter(allinfo, gene_symbol %in% mygenes)
-```
-
-``` error
-Error: object 'allinfo' not found
 ```
 
 ## Create plots for each gene
@@ -794,9 +832,7 @@ ggplot(data = mygenes_counts,
   facet_wrap(~ gene_symbol)
 ```
 
-``` error
-Error: object 'mygenes_counts' not found
-```
+<img src="fig/introduction-rendered-unnamed-chunk-36-1.png" style="display: block; margin: auto;" />
 
 The boxplots don't look good as we only have two values per group. We could just plot the individual points instead. We could use `geom_point()` to make a scatterplot.
 
@@ -806,9 +842,7 @@ ggplot(data = mygenes_counts, mapping = aes(x = Group, y = log2(Count + 1))) +
   facet_wrap(~ gene_symbol)
 ```
 
-``` error
-Error: object 'mygenes_counts' not found
-```
+<img src="fig/introduction-rendered-unnamed-chunk-37-1.png" style="display: block; margin: auto;" />
 
 The points are overlapping so we will make a jitter plot using `geom_jitter()`. A **jitter plot** is similar to a scatter plot. It adds a small amount of random variation to the location of each point so they don’t overlap. If is also quite common to combine jitter plots with other types of plot, for example, [jitter with boxplot](https://simplystatistics.org/2019/02/21/dynamite-plots-must-die/).
 
@@ -819,9 +853,7 @@ ggplot(data = mygenes_counts, mapping = aes(x = Group, y = log2(Count + 1))) +
   facet_wrap(~ gene_symbol)
 ```
 
-``` error
-Error: object 'mygenes_counts' not found
-```
+<img src="fig/introduction-rendered-unnamed-chunk-38-1.png" style="display: block; margin: auto;" />
 
 We can colour the groups similar to before using `colour = `.
 
@@ -833,9 +865,7 @@ ggplot(data = mygenes_counts,
   facet_wrap(~ gene_symbol)
 ```
 
-``` error
-Error: object 'mygenes_counts' not found
-```
+<img src="fig/introduction-rendered-unnamed-chunk-39-1.png" style="display: block; margin: auto;" />
 
 # Customising the plot
 
@@ -858,9 +888,7 @@ ggplot(data = mygenes_counts,
   scale_colour_manual(values = mycolours)
 ```
 
-``` error
-Error: object 'mygenes_counts' not found
-```
+<img src="fig/introduction-rendered-unnamed-chunk-41-1.png" style="display: block; margin: auto;" />
 
 There are built-in colour palettes that can be handy to use, where the sets of colours are predefined. `scale_colour_brewer()` is a popular one (there is also `scale_fill_brewer()`). You can take a look at the help for `scale_colour_brewer()` to see what palettes are available. The [R colours cheatsheet](https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf) also shows what the colours of the palettes look like. There's one called "Dark2", let's have a look at that.
 
@@ -873,9 +901,7 @@ ggplot(data = mygenes_counts,
   scale_colour_brewer(palette = "Dark2")
 ```
 
-``` error
-Error: object 'mygenes_counts' not found
-```
+<img src="fig/introduction-rendered-unnamed-chunk-42-1.png" style="display: block; margin: auto;" />
 
 
 ## Axis labels and Title
@@ -891,9 +917,7 @@ ggplot(data = mygenes_counts,
   labs(x = "Cell type and stage", y = "Count", title = "Mammary gland RNA-seq data")
 ```
 
-``` error
-Error: object 'mygenes_counts' not found
-```
+<img src="fig/introduction-rendered-unnamed-chunk-43-1.png" style="display: block; margin: auto;" />
 
 ## Themes
 
@@ -909,9 +933,7 @@ ggplot(data = mygenes_counts,
   theme(axis.text.x = element_text(angle = 90))
 ```
 
-``` error
-Error: object 'mygenes_counts' not found
-```
+<img src="fig/introduction-rendered-unnamed-chunk-44-1.png" style="display: block; margin: auto;" />
 
 We can remove the grey background and grid lines.
 
@@ -928,9 +950,7 @@ ggplot(data = mygenes_counts,
   theme(axis.text.x = element_text(angle = 90))
 ```
 
-``` error
-Error: object 'mygenes_counts' not found
-```
+<img src="fig/introduction-rendered-unnamed-chunk-45-1.png" style="display: block; margin: auto;" />
 
 
 ``` r
@@ -943,9 +963,7 @@ ggplot(data = mygenes_counts,
   theme(axis.text.x = element_text(angle = 90))
 ```
 
-``` error
-Error: object 'mygenes_counts' not found
-```
+<img src="fig/introduction-rendered-unnamed-chunk-46-1.png" style="display: block; margin: auto;" />
 
 There are many themes available, you can see some in the [R graph gallery](https://www.r-graph-gallery.com/192-ggplot-themes/).
 
@@ -964,9 +982,7 @@ ggplot(data = mygenes_counts,
         panel.grid.minor = element_blank())
 ```
 
-``` error
-Error: object 'mygenes_counts' not found
-```
+<img src="fig/introduction-rendered-unnamed-chunk-47-1.png" style="display: block; margin: auto;" />
 
 ## Order of categories
 
@@ -987,19 +1003,28 @@ We'll add another column called "Group_f" where we'll make the Group column into
 mygenes_counts <- mutate(mygenes_counts, Group_f = factor(Group, levels = group_order))
 ```
 
-``` error
-Error: object 'mygenes_counts' not found
-```
-
 Take a look at the data. As the table is quite wide we can use `select()` to select just the columns we want to view.
 
 
 ``` r
-mygenes_counts %>% select(X1, Group, Group_f)
+mygenes_counts %>% select(...1, Group, Group_f)
 ```
 
-``` error
-Error: object 'mygenes_counts' not found
+``` output
+# A tibble: 84 × 3
+   ...1               Group Group_f
+   <chr>              <chr> <fct>  
+ 1 ENSMUSG00000000381 lvirg lvirg  
+ 2 ENSMUSG00000000381 lvirg lvirg  
+ 3 ENSMUSG00000000381 lpreg lpreg  
+ 4 ENSMUSG00000000381 lpreg lpreg  
+ 5 ENSMUSG00000000381 llact llact  
+ 6 ENSMUSG00000000381 llact llact  
+ 7 ENSMUSG00000000381 bvirg bvirg  
+ 8 ENSMUSG00000000381 bvirg bvirg  
+ 9 ENSMUSG00000000381 bpreg bpreg  
+10 ENSMUSG00000000381 bpreg bpreg  
+# ℹ 74 more rows
 ```
 
 Notice that the Group column has `<chr>` under the heading, that indicates is a character data type, while the Group_f column has `<fct>` under the heading, indicating it is a factor data type. The `str()` command that we saw previously is useful to check the data types in objects.
@@ -1009,8 +1034,17 @@ Notice that the Group column has `<chr>` under the heading, that indicates is a 
 str(mygenes_counts)
 ```
 
-``` error
-Error: object 'mygenes_counts' not found
+``` output
+tibble [84 × 9] (S3: tbl_df/tbl/data.frame)
+ $ ...1               : chr [1:84] "ENSMUSG00000000381" "ENSMUSG00000000381" "ENSMUSG00000000381" "ENSMUSG00000000381" ...
+ $ gene_symbol        : chr [1:84] "Wap" "Wap" "Wap" "Wap" ...
+ $ Sample             : chr [1:84] "GSM1480291" "GSM1480292" "GSM1480293" "GSM1480294" ...
+ $ Count              : num [1:84] 90.2 95.6 4140.3 8414.4 49204.9 ...
+ $ characteristics    : chr [1:84] "mammary gland, luminal cells, virgin" "mammary gland, luminal cells, virgin" "mammary gland, luminal cells, 18.5 day pregnancy" "mammary gland, luminal cells, 18.5 day pregnancy" ...
+ $ immunophenotype    : chr [1:84] "luminal cell population" "luminal cell population" "luminal cell population" "luminal cell population" ...
+ $ developmental stage: chr [1:84] "virgin" "virgin" "18.5 day pregnancy" "18.5 day pregnancy" ...
+ $ Group              : chr [1:84] "lvirg" "lvirg" "lpreg" "lpreg" ...
+ $ Group_f            : Factor w/ 6 levels "bvirg","bpreg",..: 4 4 5 5 6 6 1 1 2 2 ...
 ```
 
 `str()` shows us Group_f column is a Factor with 6 levels (categories).
@@ -1022,8 +1056,8 @@ We can check the factor levels of a column as below.
 levels(mygenes_counts$Group_f)
 ```
 
-``` error
-Error: object 'mygenes_counts' not found
+``` output
+[1] "bvirg" "bpreg" "blact" "lvirg" "lpreg" "llact"
 ```
 
 The levels are in the order that we want, so we can now change our plot to use the "Group_f" column instead of Group column (change `x = ` and `colour = `).
@@ -1041,12 +1075,11 @@ ggplot(data = mygenes_counts,
         panel.grid.minor = element_blank())
 ```
 
-``` error
-Error: object 'mygenes_counts' not found
-```
+<img src="fig/introduction-rendered-unnamed-chunk-53-1.png" style="display: block; margin: auto;" />
 
 We could do similar if we wanted to have the genes in the facets in a different order. For example, we could add another column called "gene_symbol_f" where we make the gene_symbol column into a factor, specifying the order of the levels.
 
+::::::::::::::::::::::::::::::::::::: challenge
 
 #### Exercise
 
@@ -1056,7 +1089,7 @@ We could do similar if we wanted to have the genes in the facets in a different 
 
 Tip: An easy way to copy your plot in RStudio is using the plot pane's export option and selecting "Copy to Clipboard...". You can then paste it into the provided Google document.
 
-
+:::::::::::::::::::::::::::::::::::::
 
 # Saving plots
 
@@ -1079,15 +1112,19 @@ ggplot(data = mygenes_counts,
 dev.off()
 ```
 
+::::::::::::::::::::::::::::::::::::: challenge
 
 #### Exercise
-1. Download the raw counts for this dataset from GREIN
-  a. Make a boxplot. Do the samples look any different to the normalised counts?
-  b. Make subplots for the same set of 8 genes. Do they look any different to the normalised counts?
+1. Download the raw counts for this dataset from GREIN.
+    a. Make a boxplot. Do the samples look any different to the normalised counts?
+    b. Make subplots for the same set of 8 genes. Do they look any different to the normalised counts?
 2. Download the normalised counts for the GSE63310 dataset from GREIN. Make boxplots colouring the samples using different columns in the metadata file.
 
+:::::::::::::::::::::::::::::::::::::
 
-# Key Points
+
+::::::::::::::::::::::::::::::::::::: keypoints 
+
 - Tabular data can be loaded into R with the tidyverse functions `read_csv()` and `read_tsv()`
 - Tidyverse functions such as `pivot_longer()`, `mutate()`, `filter()`, `select()`, `full_join()` can be used to manipulate data
 - A ggplot has 3 components: data (dataset), mapping (columns to plot) and geom (type of plot). Different types of plots include `geom_point()`, `geom_jitter()`, `geom_line()`, `geom_boxplot()`, `geom_violin()`.
@@ -1095,17 +1132,11 @@ dev.off()
 - The aesthetics of a ggplot can be modified, such as colouring by different columns in the dataset, adding labels or changing the background
 
 
-# Further Reading
-[A short intro to R and tidyverse](https://pmacdasci.github.io/r-intro-tidyverse/)  
-[Top 50 Ggplot Visualisations]( https://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)  
-[R for Data Science](https://r4ds.had.co.nz/)
-
-
-::::::::::::::::::::::::::::::::::::: keypoints 
-
-- Keypoint 1
-- Keypoint 2
-
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-[r-markdown]: https://rmarkdown.rstudio.com/
+# Further Reading
+
+- [A short intro to R and tidyverse](https://pmacdasci.github.io/r-intro-tidyverse/)  
+- [Top 50 Ggplot Visualisations]( https://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)  
+- [R for Data Science](https://r4ds.had.co.nz/)
+
