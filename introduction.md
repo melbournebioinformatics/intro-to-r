@@ -6,6 +6,8 @@ teaching: 10
 exercises: 2
 ---
 
+**Authors:** Maria Doyle, Jessica Chung, Vicky Perreau.
+
 :::::::::::::::::::::::::::::::::::::: questions 
 
 - How do you write a lesson using R Markdown and `{sandpaper}`?
@@ -608,28 +610,28 @@ dat_long
 
 ``` output
 # A tibble: 20 × 3
-   sample experiment    count
-    <int> <chr>         <dbl>
- 1      1 experiment_1 -0.609
- 2      1 experiment_2  0.948
- 3      2 experiment_1 -0.677
- 4      2 experiment_2  0.562
- 5      3 experiment_1  0.563
- 6      3 experiment_2  0.350
- 7      4 experiment_1 -0.596
- 8      4 experiment_2  0.627
- 9      5 experiment_1  1.88 
-10      5 experiment_2 -0.572
-11      6 experiment_1 -1.33 
-12      6 experiment_2 -0.398
-13      7 experiment_1  0.423
-14      7 experiment_2  0.651
-15      8 experiment_1 -1.36 
-16      8 experiment_2  0.821
-17      9 experiment_1  0.354
-18      9 experiment_2 -1.60 
-19     10 experiment_1 -1.02 
-20     10 experiment_2 -1.58 
+   sample experiment     count
+    <int> <chr>          <dbl>
+ 1      1 experiment_1  0.402 
+ 2      1 experiment_2 -0.493 
+ 3      2 experiment_1  0.294 
+ 4      2 experiment_2  0.0417
+ 5      3 experiment_1 -0.0340
+ 6      3 experiment_2  0.0804
+ 7      4 experiment_1  1.81  
+ 8      4 experiment_2 -0.591 
+ 9      5 experiment_1  1.46  
+10      5 experiment_2 -1.96  
+11      6 experiment_1 -1.08  
+12      6 experiment_2 -0.577 
+13      7 experiment_1  0.340 
+14      7 experiment_2 -0.791 
+15      8 experiment_1 -0.349 
+16      8 experiment_2 -2.14  
+17      9 experiment_1  0.103 
+18      9 experiment_2 -0.867 
+19     10 experiment_1  1.42  
+20     10 experiment_2 -0.464 
 ```
 6. If you have another table with sample information such as 
 
