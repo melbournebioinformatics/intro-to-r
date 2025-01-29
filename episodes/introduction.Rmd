@@ -6,6 +6,8 @@ teaching: 10
 exercises: 2
 ---
 
+**Authors:** Maria Doyle, Jessica Chung, Vicky Perreau.
+
 :::::::::::::::::::::::::::::::::::::: questions 
 
 - How do you write a lesson using R Markdown and `{sandpaper}`?
