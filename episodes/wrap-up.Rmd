@@ -1,0 +1,91 @@
+---
+title: 'Wrapping Up'
+teaching: 10
+exercises: 10
+---
+
+:::::::::::::::::::::::::::::::::::::: questions 
+
+- How can I save plots to a file?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: objectives
+
+- Save plots to a pdf file in R
+- Explain why using the `sessionInfo()` function is good practice
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Saving plots
+
+```{r, include=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+We can save plots interactively by clicking Export in the Plots window and saving as e.g. "myplot.pdf". Or we can output plots to pdf using `pdf()` followed by `dev.off()`. We put our plot code after the call to `pdf()` and before closing the plot device with `dev.off()`.
+
+Let's save our last plot.
+
+```{r, eval=FALSE}
+pdf("myplot.pdf")
+ggplot(data = mygenes_counts, 
+       mapping = aes(x = Group_f, y = log2(Count + 1), colour = Group_f)) +
+  geom_jitter() +
+  facet_wrap(~ gene_symbol) +
+  labs(x = "Cell type and stage", y = "Count", title = "Mammary gland RNA-seq data") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  theme(panel.background = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+dev.off()
+```
+
+-----
+
+## Session Info
+
+At the end of your report, we recommend you run the `sessionInfo()`
+function which prints out details about your working environment such as
+the version of R yo are running, loaded packages, and package versions.
+Printing out `sessionInfo()` at the end of your analysis is good
+practice as it helps with reproducibility in the future.
+
+```{r}
+sessionInfo()
+```
+
+-----
+
+# Exercises
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+#### Exercise
+
+1. Download the raw counts for this dataset from [GREIN](http://www.ilincs.org/apps/grein/).
+    a. Make a boxplot. Do the samples look any different to the normalised counts?
+    b. Make subplots for the same set of 8 genes. Do they look any different to the normalised counts?
+2. Download the normalised counts for the GSE63310 dataset from GREIN. Make boxplots colouring the samples using different columns in the metadata file.
+
+:::::::::::::::::::::::::::::::::::::
+
+
+
+-----
+
+## Further Reading
+
+- [A short intro to R and tidyverse](https://pmacdasci.github.io/r-intro-tidyverse/)  
+- [Top 50 Ggplot Visualisations]( https://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)  
+- [R for Data Science](https://r4ds.had.co.nz/)
+
+
+::::::::::::::::::::::::::::::::::::: keypoints 
+
+- You can use the `pdf()` function to save plots, and finalize the file by calling `dev.off()`
+- The `sessionInfo()` function prints information about your R environment which is useful for reproducibility
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
