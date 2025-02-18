@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R for Biologists"
 author: "Maria Doyle, Jessica Chung, Vicky Perreau"
-date: "04 February 2025"
+date: "18 February 2025"
 teaching: 10
 exercises: 2
 ---
@@ -610,28 +610,28 @@ dat_long
 
 ``` output
 # A tibble: 20 × 3
-   sample experiment     count
-    <int> <chr>          <dbl>
- 1      1 experiment_1  0.937 
- 2      1 experiment_2  1.63  
- 3      2 experiment_1 -0.345 
- 4      2 experiment_2 -0.0334
- 5      3 experiment_1  1.27  
- 6      3 experiment_2 -0.841 
- 7      4 experiment_1 -1.68  
- 8      4 experiment_2  0.143 
- 9      5 experiment_1  0.0443
-10      5 experiment_2  1.23  
-11      6 experiment_1 -0.118 
-12      6 experiment_2  0.417 
-13      7 experiment_1 -0.160 
-14      7 experiment_2  0.431 
-15      8 experiment_1 -1.18  
-16      8 experiment_2 -0.283 
-17      9 experiment_1  0.282 
-18      9 experiment_2  0.152 
-19     10 experiment_1  0.692 
-20     10 experiment_2 -1.28  
+   sample experiment      count
+    <int> <chr>           <dbl>
+ 1      1 experiment_1  0.962  
+ 2      1 experiment_2 -1.29   
+ 3      2 experiment_1 -0.177  
+ 4      2 experiment_2 -0.208  
+ 5      3 experiment_1  0.473  
+ 6      3 experiment_2 -0.00790
+ 7      4 experiment_1 -0.310  
+ 8      4 experiment_2 -0.225  
+ 9      5 experiment_1  0.0446 
+10      5 experiment_2  1.06   
+11      6 experiment_1  0.999  
+12      6 experiment_2  0.0531 
+13      7 experiment_1 -0.390  
+14      7 experiment_2  1.61   
+15      8 experiment_1  1.91   
+16      8 experiment_2 -0.771  
+17      9 experiment_1 -0.896  
+18      9 experiment_2  0.728  
+19     10 experiment_1  0.231  
+20     10 experiment_2 -1.29   
 ```
 6. If you have another table with sample information such as 
 
