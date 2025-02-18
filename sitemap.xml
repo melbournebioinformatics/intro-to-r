@@ -13,6 +13,18 @@
     <loc>melbournebioinformatics.github.io/uom-varnish/aio.html</loc>
   </url>
   <url>
+    <loc>melbournebioinformatics.github.io/uom-varnish/explore-data.html</loc>
+  </url>
+  <url>
+    <loc>melbournebioinformatics.github.io/uom-varnish/format-data.html</loc>
+  </url>
+  <url>
+    <loc>melbournebioinformatics.github.io/uom-varnish/ggplot2-customisation.html</loc>
+  </url>
+  <url>
+    <loc>melbournebioinformatics.github.io/uom-varnish/ggplot2-intro.html</loc>
+  </url>
+  <url>
     <loc>melbournebioinformatics.github.io/uom-varnish/images.html</loc>
   </url>
   <url>
@@ -29,6 +41,18 @@
   </url>
   <url>
     <loc>melbournebioinformatics.github.io/uom-varnish/instructor/aio.html</loc>
+  </url>
+  <url>
+    <loc>melbournebioinformatics.github.io/uom-varnish/instructor/explore-data.html</loc>
+  </url>
+  <url>
+    <loc>melbournebioinformatics.github.io/uom-varnish/instructor/format-data.html</loc>
+  </url>
+  <url>
+    <loc>melbournebioinformatics.github.io/uom-varnish/instructor/ggplot2-customisation.html</loc>
+  </url>
+  <url>
+    <loc>melbournebioinformatics.github.io/uom-varnish/instructor/ggplot2-intro.html</loc>
   </url>
   <url>
     <loc>melbournebioinformatics.github.io/uom-varnish/instructor/images.html</loc>
@@ -52,6 +76,9 @@
     <loc>melbournebioinformatics.github.io/uom-varnish/instructor/reference.html</loc>
   </url>
   <url>
+    <loc>melbournebioinformatics.github.io/uom-varnish/instructor/wrap-up.html</loc>
+  </url>
+  <url>
     <loc>melbournebioinformatics.github.io/uom-varnish/instructor-notes.html</loc>
   </url>
   <url>
@@ -65,5 +92,8 @@
   </url>
   <url>
     <loc>melbournebioinformatics.github.io/uom-varnish/reference.html</loc>
+  </url>
+  <url>
+    <loc>melbournebioinformatics.github.io/uom-varnish/wrap-up.html</loc>
   </url>
 </urlset>
