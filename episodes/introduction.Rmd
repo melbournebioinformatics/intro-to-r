@@ -39,7 +39,7 @@ Most R programmers do not remember all the command lines we share in this docume
 
 ## Intro to R and RStudio
 
-RStudio is an interface that makes it easier to use R. There are four windows in RStudio. The screenshot below shows an [analogy linking the different RStudio windows to cooking](https://twitter.com/RLadiesNCL/status/1138812826917724160).
+RStudio is an interface that makes it easier to use R. There are four panels in RStudio. The screenshot below shows an [analogy linking the different RStudio panels to cooking](https://twitter.com/RLadiesNCL/status/1138812826917724160).
 
 ![](fig/rstudio_cooking.jpg)
 

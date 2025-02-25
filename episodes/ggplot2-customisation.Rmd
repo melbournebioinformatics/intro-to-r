@@ -24,7 +24,6 @@ This chapter can be skipped if running low on time.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Customising plots
 
 ```{r, include=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -47,7 +46,6 @@ mygenes <- c("Csn1s2a", "Csn1s1", "Csn2", "Glycam1", "COX1", "Trf", "Wap", "Eef1
 mygenes_counts <- filter(allinfo, gene_symbol %in% mygenes)
 ```
 
------
 
 ## Specifying colours
 
