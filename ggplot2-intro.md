@@ -69,7 +69,7 @@ Let's plot boxplots to visualise the distribution of the counts for each
 sample. This helps us to compare the samples and check if any look
 unusual.
 
-*Note: with ggplot the "+" must go at the end of the line—it can't go
+*Note: In commands that span multiple lines in R, "+" must go at the end of the line—it can't go
 at the beginning.*
 
 ::::::::::::::::::::::::::::::::::::: challenge
@@ -92,7 +92,7 @@ ggplot(data = allinfo, mapping = aes(x = Sample, y = Count)) +
 This plot looks a bit weird. It's because we have some genes with
 extremely high counts. To make it easier to visualise the distributions
 we usually plot the logarithm of RNA-seq counts. We'll plot the Sample
-on the X axis and log\~ 2\~ Counts on the y axis. We can log the Counts
+on the X axis and log2 Counts on the y axis. We can log the Counts
 within the `aes()`. The sample labels are also overlapping each other,
 we will show how to fix this later.
 
@@ -514,7 +514,7 @@ Note that for jitter plots you will want to use the `colour = ` slot rather than
 
 - A ggplot has 3 components: data (dataset), mapping (columns to plot) and geom (type of plot). Different types of plots include `geom_point()`, `geom_jitter()`, `geom_line()`, `geom_boxplot()`, `geom_violin()`.
 - `facet_wrap()` can be used to make subplots of the data
-- The aesthetics of a ggplot can be modified, such as colouring by different columns in the dataset, adding labels or changing the background
+- The aesthetics of a ggplot can be modified, such as colouring by different columns in the dataset
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

@@ -94,7 +94,7 @@ loaded via a namespace (and not attached):
 
 -----
 
-# Exercises
+## Exercises
 
 
 ::::::::::::::::::::::::::::::::::::: challenge

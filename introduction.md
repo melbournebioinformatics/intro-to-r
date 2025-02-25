@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R"
 author: "Maria Doyle, Jessica Chung, Vicky Perreau, Kim-Anh Lê Cao, Saritha Kodikara, Eva Hamrud"
-date: "18 February 2025"
+date: "25 February 2025"
 teaching: 30
 exercises: 10
 ---
@@ -35,7 +35,7 @@ Most R programmers do not remember all the command lines we share in this docume
 
 ## Intro to R and RStudio
 
-RStudio is an interface that makes it easier to use R. There are four windows in RStudio. The screenshot below shows an [analogy linking the different RStudio windows to cooking](https://twitter.com/RLadiesNCL/status/1138812826917724160).
+RStudio is an interface that makes it easier to use R. There are four panels in RStudio. The screenshot below shows an [analogy linking the different RStudio panels to cooking](https://twitter.com/RLadiesNCL/status/1138812826917724160).
 
 ![](fig/rstudio_cooking.jpg)
 

@@ -24,11 +24,9 @@ This chapter can be skipped if running low on time.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Customising plots
 
 
 
------
 
 ## Specifying colours
 

@@ -17,7 +17,7 @@ exercises: 5
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Formatting the data
+
 
 
 
@@ -64,13 +64,13 @@ seqdata <- pivot_longer(counts, cols = starts_with("GSM"),
 We use `cols = starts_with("GSM")` to tell the function we want to reformat the columns whose names start with "GSM" (these columns are the ones where we have the gene counts).
 `pivot_longer()` will then reformat the specified columns into two new columns, which 
 we're naming "Sample" and "Count". 
-The`names_to = "Sample"` specifies that we want the new column containing the columns to be named "Sample", and the`values_to = "Count"` specifies that we want the new column containing the values to be named "Count".
+The `names_to = "Sample"` specifies that we want the new column containing the columns to be named "Sample", and the `values_to = "Count"` specifies that we want the new column containing the values to be named "Count".
 
 :::::::::::::::::::::::::::::::::::::::::::::::::
 
 As explained earlier, in R there is often more than one way to do the same thing. We could
 get the same result by specifying the argument `cols` in a different way. For example, 
-instead of using `starts_with` we could use a range like the one you used in question 4.12. 
+instead of using `starts_with` we could use a range like the one you used in the previous section.
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
@@ -126,9 +126,9 @@ All three `seqdata` objects are the same, as we did the same conversion from wid
 
 ## Joining two tables
 
-Now that we've got just one column containing sample ids in both our
+Now that we've got just one column containing sample IDs in both our
 counts and metadata objects we can join them together using the sample
-ids. This will make it easier to identify the categories for each sample
+IDs. This will make it easier to identify the categories for each sample
 (e.g. if it's basal cell type) and to use that information in our plots.
 
 ![](fig/join_data.png)
