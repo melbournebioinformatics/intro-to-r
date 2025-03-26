@@ -429,15 +429,6 @@ sampleinfo[,2]
 :::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-::: callout
-
-####  Common R Error: Missing Comma in Subsetting
-
-When subsetting data frames or matrices (which have *two* dimensions, i.e. rows and columns), always use a comma to separate rows and columns, like `sampleinfo[1, ]`. Forgetting the comma, as in `sampleinfo[1]`, will cause an error. Try it yourself and see what happens!
-
-:::
-
-
 You can use a combination of number of row and column to extract one
 element in the matrix. 
 
