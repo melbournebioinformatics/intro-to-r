@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R"
 author: "Maria Doyle, Jessica Chung, Vicky Perreau, Kim-Anh Lê Cao, Saritha Kodikara, Eva Hamrud"
-date: "25 March 2025"
+date: "26 March 2025"
 teaching: 30
 exercises: 10
 ---
@@ -395,12 +395,12 @@ Use clear and descriptive names for your objects, such as `data_raw` and `data_n
 
 
 So far we have looked at objects which are numbers. However objects can also be made of characters, these are called *strings*. 
-To create a string you need to use quotation marks `""`. Note that you can either use `print()` to print out your object, or just run the object name directly. 
+To create a string you need to use quotation marks `""`.
 
 
 ``` r
 my_string <- "Hello!"
-print(my_string)
+my_string
 ```
 
 ``` output
@@ -441,7 +441,7 @@ Try making an object and setting it as `1:5`, what does this object look like?
 
 ``` r
 x <- 1:5
-print(x)
+x
 ```
 
 ``` output
@@ -489,7 +489,7 @@ Create a vector from 1 to 10 and print the 9th element of the vector.
 
 ``` r
 my_vector <- 1:10
-print(my_vector[9])
+my_vector[9]
 ```
 
 ``` output
