@@ -82,10 +82,10 @@ other attached packages:
  [9] ggplot2_3.5.1   tidyverse_2.0.0
 
 loaded via a namespace (and not attached):
- [1] vctrs_0.6.5      cli_3.6.4        knitr_1.49       rlang_1.1.5     
- [5] xfun_0.51        stringi_1.8.4    renv_1.1.4       generics_0.1.3  
+ [1] vctrs_0.6.5      cli_3.6.4        knitr_1.50       rlang_1.1.5     
+ [5] xfun_0.51        stringi_1.8.7    renv_1.1.4       generics_0.1.3  
  [9] glue_1.8.0       colorspace_2.1-1 hms_1.1.3        scales_1.3.0    
-[13] grid_4.4.3       evaluate_1.0.3   munsell_0.5.1    tzdb_0.4.0      
+[13] grid_4.4.3       evaluate_1.0.3   munsell_0.5.1    tzdb_0.5.0      
 [17] yaml_2.3.10      lifecycle_1.0.4  compiler_4.4.3   timechange_0.3.0
 [21] pkgconfig_2.0.3  R6_2.6.1         tidyselect_1.2.1 pillar_1.10.1   
 [25] magrittr_2.0.3   tools_4.4.3      withr_3.0.2      gtable_0.3.6    
