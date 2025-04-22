@@ -686,27 +686,34 @@ summary(counts)
                                        Mean   :   42.132   Mean   :   42.132  
                                        3rd Qu.:   29.840   3rd Qu.:   29.604  
                                        Max.   :12525.066   Max.   :12416.211  
-   GSM1480293         GSM1480294         GSM1480295          GSM1480296       
- Min.   :    0.00   Min.   :    0.00   Min.   :     0.00   Min.   :     0.00  
- 1st Qu.:    0.00   1st Qu.:    0.00   1st Qu.:     0.00   1st Qu.:     0.00  
- Median :    0.92   Median :    0.89   Median :     0.58   Median :     0.54  
- Mean   :   42.13   Mean   :   42.13   Mean   :    42.13   Mean   :    42.13  
- 3rd Qu.:   21.91   3rd Qu.:   19.92   3rd Qu.:    12.27   3rd Qu.:    12.28  
- Max.   :49191.15   Max.   :55692.09   Max.   :111850.87   Max.   :108726.08  
-   GSM1480297          GSM1480298          GSM1480299       
+   GSM1480293          GSM1480294          GSM1480295       
+ Min.   :    0.000   Min.   :    0.000   Min.   :0.000e+00  
+ 1st Qu.:    0.000   1st Qu.:    0.000   1st Qu.:0.000e+00  
+ Median :    0.918   Median :    0.888   Median :5.830e-01  
+ Mean   :   42.132   Mean   :   42.132   Mean   :4.213e+01  
+ 3rd Qu.:   21.908   3rd Qu.:   19.921   3rd Qu.:1.227e+01  
+ Max.   :49191.148   Max.   :55692.086   Max.   :1.119e+05  
+   GSM1480296          GSM1480297          GSM1480298       
+ Min.   :0.000e+00   Min.   :    0.000   Min.   :    0.000  
+ 1st Qu.:0.000e+00   1st Qu.:    0.000   1st Qu.:    0.000  
+ Median :5.440e-01   Median :    2.158   Median :    2.254  
+ Mean   :4.213e+01   Mean   :   42.132   Mean   :   42.132  
+ 3rd Qu.:1.228e+01   3rd Qu.:   27.414   3rd Qu.:   26.450  
+ Max.   :1.087e+05   Max.   :10489.311   Max.   :10662.486  
+   GSM1480299          GSM1480300          GSM1480301       
  Min.   :    0.000   Min.   :    0.000   Min.   :    0.000  
  1st Qu.:    0.000   1st Qu.:    0.000   1st Qu.:    0.000  
- Median :    2.158   Median :    2.254   Median :    1.854  
+ Median :    1.854   Median :    1.816   Median :    1.629  
  Mean   :   42.132   Mean   :   42.132   Mean   :   42.132  
- 3rd Qu.:   27.414   3rd Qu.:   26.450   3rd Qu.:   24.860  
- Max.   :10489.311   Max.   :10662.486   Max.   :15194.048  
-   GSM1480300          GSM1480301          GSM1480302       
- Min.   :    0.000   Min.   :    0.000   Min.   :    0.000  
- 1st Qu.:    0.000   1st Qu.:    0.000   1st Qu.:    0.000  
- Median :    1.816   Median :    1.629   Median :    1.749  
- Mean   :   42.132   Mean   :   42.132   Mean   :   42.132  
- 3rd Qu.:   23.443   3rd Qu.:   23.443   3rd Qu.:   24.818  
- Max.   :17434.935   Max.   :19152.728   Max.   :15997.193  
+ 3rd Qu.:   24.860   3rd Qu.:   23.443   3rd Qu.:   23.444  
+ Max.   :15194.048   Max.   :17434.935   Max.   :19152.728  
+   GSM1480302       
+ Min.   :    0.000  
+ 1st Qu.:    0.000  
+ Median :    1.749  
+ Mean   :   42.132  
+ 3rd Qu.:   24.818  
+ Max.   :15997.193  
 ```
 
 
