@@ -1,12 +1,14 @@
 ---
 title: "Introduction to R"
 author: "Maria Doyle, Jessica Chung, Vicky Perreau, Kim-Anh Lê Cao, Saritha Kodikara, Eva Hamrud"
-date: "01 July 2025"
+date: "18 August 2025"
 teaching: 30
 exercises: 10
 ---
 
 **Authors:** Maria Doyle, Jessica Chung, Vicky Perreau, Kim-Anh Lê Cao, Saritha Kodikara, Eva Hamrud.
+
+These wonderful people wrote this content.
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
@@ -48,7 +50,7 @@ There are two ways to work in RStudio in the console or in a script.
 Let's start by running a command in the console. 
 
 
-::::::::::::::::::::::::::::::::::::: challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 #### Your turn 1.1
 
@@ -96,13 +98,13 @@ You can also highlight multiple lines at once and run them at once - have a go!
 
 
 
-::::::::::::::::::::::::::::::::::::::: callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
 #### Recommended Practice: Use Scripts
 
 The console is great for quick tests or running single lines of code. However, for more complex analyses, using scripts is best practice. Scripts help keep your work organized and reproducible. We'll use scripts for the rest of this workshop.
 
-::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 -----
