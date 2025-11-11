@@ -56,7 +56,7 @@ sessionInfo()
 ```
 
 ``` output
-R version 4.5.1 (2025-06-13)
+R version 4.5.2 (2025-10-31)
 Platform: x86_64-pc-linux-gnu
 Running under: Ubuntu 22.04.5 LTS
 
@@ -85,10 +85,10 @@ loaded via a namespace (and not attached):
  [1] vctrs_0.6.5        cli_3.6.5          knitr_1.50         rlang_1.1.6       
  [5] xfun_0.54          stringi_1.8.7      renv_1.1.5         generics_0.1.4    
  [9] S7_0.2.0           glue_1.8.0         hms_1.1.4          scales_1.4.0      
-[13] grid_4.5.1         evaluate_1.0.5     tzdb_0.5.0         yaml_2.3.10       
-[17] lifecycle_1.0.4    compiler_4.5.1     RColorBrewer_1.1-3 timechange_0.3.0  
+[13] grid_4.5.2         evaluate_1.0.5     tzdb_0.5.0         yaml_2.3.10       
+[17] lifecycle_1.0.4    compiler_4.5.2     RColorBrewer_1.1-3 timechange_0.3.0  
 [21] pkgconfig_2.0.3    farver_2.1.2       R6_2.6.1           tidyselect_1.2.1  
-[25] pillar_1.11.1      magrittr_2.0.4     tools_4.5.1        withr_3.0.2       
+[25] pillar_1.11.1      magrittr_2.0.4     tools_4.5.2        withr_3.0.2       
 [29] gtable_0.3.6      
 ```
 
