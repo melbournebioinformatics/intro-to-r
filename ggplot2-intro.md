@@ -85,7 +85,7 @@ ggplot(data = allinfo, mapping = aes(x = Sample, y = Count)) +
   geom_boxplot()
 ```
 
-<img src="fig/ggplot2-intro-rendered-unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-intro-rendered-unnamed-chunk-2-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -114,7 +114,7 @@ Warning: Removed 84054 rows containing non-finite outside the scale range
 (`stat_boxplot()`).
 ```
 
-<img src="fig/ggplot2-intro-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-intro-rendered-unnamed-chunk-3-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -135,7 +135,7 @@ ggplot(data = allinfo, mapping = aes(x = Sample, y = log2(Count + 1))) +
   geom_boxplot()
 ```
 
-<img src="fig/ggplot2-intro-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-intro-rendered-unnamed-chunk-4-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -170,7 +170,7 @@ ggplot(data = allinfo, mapping = aes(x = Sample, y = log2(Count + 1))) +
   geom_violin()
 ```
 
-<img src="fig/ggplot2-intro-rendered-unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-intro-rendered-unnamed-chunk-5-1.png" alt="" style="display: block; margin: auto;" />
 
 ::::::::::::::::::::::::::
 
@@ -205,7 +205,7 @@ ggplot(data = allinfo, mapping = aes(x = Sample, y = log2(Count + 1), colour = S
   geom_boxplot()
 ```
 
-<img src="fig/ggplot2-intro-rendered-unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-intro-rendered-unnamed-chunk-6-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -225,7 +225,7 @@ ggplot(data = allinfo, mapping = aes(x = Sample, y = log2(Count + 1), fill = Sam
   geom_boxplot()
 ```
 
-<img src="fig/ggplot2-intro-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-intro-rendered-unnamed-chunk-7-1.png" alt="" style="display: block; margin: auto;" />
 
 That looks better. `fill =` is used to fill in areas in ggplot2
 plots, whereas `colour =` is used to colour lines and points.
@@ -425,7 +425,7 @@ ggplot(data = mygenes_counts,
   facet_wrap(~ gene_symbol)
 ```
 
-<img src="fig/ggplot2-intro-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-intro-rendered-unnamed-chunk-14-1.png" alt="" style="display: block; margin: auto;" />
 
 Here we *facet* on the `gene_symbol` column using
 `facet_wrap()`. We add the tilde symbol `~` in front of the column we
@@ -455,7 +455,7 @@ ggplot(data = mygenes_counts, mapping = aes(x = Group, y = log2(Count + 1))) +
   facet_wrap(~ gene_symbol)
 ```
 
-<img src="fig/ggplot2-intro-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-intro-rendered-unnamed-chunk-15-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -479,7 +479,7 @@ ggplot(data = mygenes_counts, mapping = aes(x = Group, y = log2(Count + 1))) +
   facet_wrap(~ gene_symbol)
 ```
 
-<img src="fig/ggplot2-intro-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-intro-rendered-unnamed-chunk-16-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -500,7 +500,7 @@ ggplot(data = mygenes_counts,
   facet_wrap(~ gene_symbol)
 ```
 
-<img src="fig/ggplot2-intro-rendered-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-intro-rendered-unnamed-chunk-17-1.png" alt="" style="display: block; margin: auto;" />
 
 Note that for jitter plots you will want to use the `colour = ` slot rather than the `fill = ` slot. 
 

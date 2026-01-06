@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R"
 author: "Maria Doyle, Jessica Chung, Vicky Perreau, Kim-Anh Lê Cao, Saritha Kodikara, Eva Hamrud"
-date: "11 November 2025"
+date: "06 January 2026"
 teaching: 30
 exercises: 10
 ---

@@ -52,7 +52,7 @@ ggplot(data = mygenes_counts,
   scale_colour_manual(values = mycolours)
 ```
 
-<img src="fig/ggplot2-customisation-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-customisation-rendered-unnamed-chunk-3-1.png" alt="" style="display: block; margin: auto;" />
 
 
 There are built-in colour palettes that can be handy to use, where the
@@ -73,7 +73,7 @@ ggplot(data = mygenes_counts,
   scale_colour_brewer(palette = "Dark2")
 ```
 
-<img src="fig/ggplot2-customisation-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-customisation-rendered-unnamed-chunk-4-1.png" alt="" style="display: block; margin: auto;" />
 
 -----
 
@@ -93,7 +93,7 @@ ggplot(data = mygenes_counts,
   labs(x = "Cell type and stage", y = "Count", title = "Mammary gland RNA-seq data")
 ```
 
-<img src="fig/ggplot2-customisation-rendered-unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-customisation-rendered-unnamed-chunk-5-1.png" alt="" style="display: block; margin: auto;" />
 
 -----
 
@@ -113,7 +113,7 @@ ggplot(data = mygenes_counts,
   theme(axis.text.x = element_text(angle = 90))
 ```
 
-<img src="fig/ggplot2-customisation-rendered-unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-customisation-rendered-unnamed-chunk-6-1.png" alt="" style="display: block; margin: auto;" />
 
 We can remove the grey background and grid lines.
 
@@ -132,7 +132,7 @@ ggplot(data = mygenes_counts,
   theme(axis.text.x = element_text(angle = 90))
 ```
 
-<img src="fig/ggplot2-customisation-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-customisation-rendered-unnamed-chunk-7-1.png" alt="" style="display: block; margin: auto;" />
 
 
 ``` r
@@ -145,7 +145,7 @@ ggplot(data = mygenes_counts,
   theme(axis.text.x = element_text(angle = 90))
 ```
 
-<img src="fig/ggplot2-customisation-rendered-unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-customisation-rendered-unnamed-chunk-8-1.png" alt="" style="display: block; margin: auto;" />
 
 There are many themes available, you can see some in the [R graph
 gallery](https://www.r-graph-gallery.com/192-ggplot-themes/).
@@ -166,7 +166,7 @@ ggplot(data = mygenes_counts,
         panel.grid.minor = element_blank())
 ```
 
-<img src="fig/ggplot2-customisation-rendered-unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-customisation-rendered-unnamed-chunk-9-1.png" alt="" style="display: block; margin: auto;" />
 
 
 -----
@@ -280,7 +280,7 @@ ggplot(data = mygenes_counts,
         panel.grid.minor = element_blank())
 ```
 
-<img src="fig/ggplot2-customisation-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
+<img src="fig/ggplot2-customisation-rendered-unnamed-chunk-15-1.png" alt="" style="display: block; margin: auto;" />
 
 We could do similar if we wanted to have the genes in the facets in a
 different order. For example, we could add another column called
