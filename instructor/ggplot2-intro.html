@@ -332,7 +332,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction to ggplot2</h1>
-        <p>Last updated on 2025-11-11 |
+        <p>Last updated on 2026-01-06 |
 
         <a href="https://github.com/melbournebioinformatics/intro-to-R/edit/main/episodes/ggplot2-intro.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -434,7 +434,7 @@ the end of the line—it can’t go at the beginning.</em></p>
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">allinfo</span>, mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sample</span>, y <span class="op">=</span> <span class="va">Count</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-2-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-2-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
 </div>
 </div>
 <p>This plot looks a bit weird. It’s because we have some genes with
@@ -465,7 +465,7 @@ each other, we will show how to fix this later.</p>
 <pre class="warning" tabindex="0"><code>Warning: Removed 84054 rows containing non-finite outside the scale range
 (`stat_boxplot()`).</code></pre>
 </div>
-<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-3-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
 </div>
 </div>
 <p>We get a warning here about rows containing non-finite values being
@@ -488,7 +488,7 @@ avoid the zeros being dropped (‘psuedo-count’).</p>
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">allinfo</span>, mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sample</span>, y <span class="op">=</span> <span class="fu">log2</span><span class="op">(</span><span class="va">Count</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-4-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
 </div>
 </div>
 <p>The box plots show that the distributions of the samples are not
@@ -517,7 +517,7 @@ to make a violin plot using the <code>geom_violin()</code> function.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -527,7 +527,7 @@ to make a violin plot using the <code>geom_violin()</code> function.</p>
 <span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">allinfo</span>, mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sample</span>, y <span class="op">=</span> <span class="fu">log2</span><span class="op">(</span><span class="va">Count</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">geom_violin</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-5-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-5-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
 </div>
 </div>
 </div>
@@ -565,7 +565,7 @@ inside <code>aes()</code>.</p>
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">allinfo</span>, mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sample</span>, y <span class="op">=</span> <span class="fu">log2</span><span class="op">(</span><span class="va">Count</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span>, colour <span class="op">=</span> <span class="va">Sample</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-6-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-6-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
 </div>
 </div>
 <p>Colouring the edges wasn’t quite what we had in mind. Look at the
@@ -588,7 +588,7 @@ argument.</p>
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">allinfo</span>, mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sample</span>, y <span class="op">=</span> <span class="fu">log2</span><span class="op">(</span><span class="va">Count</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span>, fill <span class="op">=</span> <span class="va">Sample</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>That looks better. <code>fill =</code> is used to fill in areas in
+<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-7-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>That looks better. <code>fill =</code> is used to fill in areas in
 ggplot2 plots, whereas <code>colour =</code> is used to colour lines and
 points.</p>
 </div>
@@ -645,7 +645,7 @@ expressions</a> to match patterns of characters in a string.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -693,7 +693,7 @@ has shortened category names, bvirg, lpreg, etc.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -765,7 +765,7 @@ to check if you’re right.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>There is one row per sample per gene in <code>mygenes_counts</code>
 (as is the case in <code>allinfo</code>). As there are 8 genes left
@@ -804,7 +804,7 @@ rows in <code>mygenes_counts</code>.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Selecting the genes </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>To identify these 8 genes, we used <a href="https://r4ds.had.co.nz/pipes.html" class="external-link">pipes</a> (<code>%&gt;%</code>)
 to string a series of function calls together (which is beyond the scope
@@ -840,7 +840,7 @@ of this tutorial, but totally worth learning about independently!).</p>
 <span>  <span class="fu">geom_boxplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">gene_symbol</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Here we <em>facet</em> on the <code>gene_symbol</code> column using
+<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-14-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Here we <em>facet</em> on the <code>gene_symbol</code> column using
 <code>facet_wrap()</code>. We add the tilde symbol <code>~</code> in
 front of the column we want to facet on.</p>
 </div>
@@ -868,7 +868,7 @@ two values per group. Let’s plot the individual points instead using the
 <span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">gene_symbol</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-15-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
 </div>
 </div>
 <div class="section level3">
@@ -896,7 +896,7 @@ with boxplot</a>.</p>
 <span>  <span class="fu">geom_jitter</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">gene_symbol</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-16-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
 </div>
 </div>
 <div id="your-turn-4.15" class="callout challenge">
@@ -916,7 +916,7 @@ with boxplot</a>.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -927,7 +927,7 @@ with boxplot</a>.</p>
 <span>  <span class="fu">geom_jitter</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">gene_symbol</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-17-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Note that for jitter plots you will want to use the
+<figure><img src="../fig/ggplot2-intro-rendered-unnamed-chunk-17-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Note that for jitter plots you will want to use the
 <code>colour =</code> slot rather than the <code>fill =</code> slot.</p>
 </div>
 </div>
@@ -1017,8 +1017,8 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "melbournebioinformatics.github.io/uom-varnish/instructor/ggplot2-intro.html",
   "identifier": "melbournebioinformatics.github.io/uom-varnish/instructor/ggplot2-intro.html",
-  "dateCreated": "2025-11-05",
-  "dateModified": "2025-11-11",
+  "dateCreated": "2026-01-06",
+  "dateModified": "2026-01-06",
   "datePublished": "2026-01-06"
 }
 
