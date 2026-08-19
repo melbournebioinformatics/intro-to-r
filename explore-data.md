@@ -668,7 +668,7 @@ spc_tbl_ [12 × 4] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..   immunophenotype = col_character(),
   ..   `developmental stage` = col_character()
   .. )
- - attr(*, "problems")=<externalptr> 
+ - attr(*, "problems")=<pointer: 0x55a115dda1f0> 
 ```
 
 `summary()` generates summary statistics of our data. For numeric columns (columns of type double or integer) it outputs statistics such as the min, max, mean and median. We will demonstrate this with the counts file as it contains numeric data. For character columns it shows us the length (how many rows).
@@ -679,13 +679,13 @@ summary(counts)
 ```
 
 ``` output
-   gene_id          gene_symbol          GSM1480291          GSM1480292       
- Length:23735       Length:23735       Min.   :    0.000   Min.   :    0.000  
- Class :character   Class :character   1st Qu.:    0.000   1st Qu.:    0.000  
- Mode  :character   Mode  :character   Median :    1.745   Median :    1.891  
-                                       Mean   :   42.132   Mean   :   42.132  
-                                       3rd Qu.:   29.840   3rd Qu.:   29.604  
-                                       Max.   :12525.066   Max.   :12416.211  
+      gene_id         gene_symbol      GSM1480291          GSM1480292       
+ Length   :23735   Length   :23735   Min.   :    0.000   Min.   :    0.000  
+ N.unique :23735   N.unique :23572   1st Qu.:    0.000   1st Qu.:    0.000  
+ N.blank  :    0   N.blank  :    0   Median :    1.745   Median :    1.891  
+ Min.nchar:   18   Min.nchar:    1   Mean   :   42.132   Mean   :   42.132  
+ Max.nchar:   18   Max.nchar:   14   3rd Qu.:   29.840   3rd Qu.:   29.604  
+                                     Max.   :12525.066   Max.   :12416.211  
    GSM1480293          GSM1480294          GSM1480295       
  Min.   :    0.000   Min.   :    0.000   Min.   :0.000e+00  
  1st Qu.:    0.000   1st Qu.:    0.000   1st Qu.:0.000e+00  
