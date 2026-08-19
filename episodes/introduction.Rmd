@@ -25,6 +25,13 @@ These wonderful people wrote this content.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+```{r, include=FALSE, echo=FALSE}
+
+library(vctrs)
+
+```
+
+
 
 ```{r setup, include=FALSE}
 # Smaller images for pdf
