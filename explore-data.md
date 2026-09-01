@@ -668,7 +668,7 @@ spc_tbl_ [12 × 4] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..   immunophenotype = col_character(),
   ..   `developmental stage` = col_character()
   .. )
- - attr(*, "problems")=<pointer: 0x55a115dda1f0> 
+ - attr(*, "problems")=<pointer: 0x558c0e5b92f0> 
 ```
 
 `summary()` generates summary statistics of our data. For numeric columns (columns of type double or integer) it outputs statistics such as the min, max, mean and median. We will demonstrate this with the counts file as it contains numeric data. For character columns it shows us the length (how many rows).
