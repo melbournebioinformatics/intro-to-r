@@ -322,13 +322,13 @@
           Previous: Formatting the Data
         </a>
         <a class="chapter-link float-end" href="../instructor/ggplot2-customisation.html" rel="next">
-          Next: Extra ggplot2...
+          Next: Extra ggplot2 Customisation...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction to ggplot2</h1>
-        <p>Last updated on 2026-08-19 |
+        <p>Last updated on 2026-09-01 |
 
         <a href="https://github.com/melbournebioinformatics/intro-to-R/edit/main/episodes/ggplot2-intro.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -413,11 +413,11 @@ each sample. This helps us to compare the samples and check if any look
 unusual.</p>
 <p><em>Note: In commands that span multiple lines in R, “+” must go at
 the end of the line—it can’t go at the beginning.</em></p>
-<div id="your-turn-4.1" class="callout discussion">
+<div id="your-turn-4.1" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<span class="callout-header">Discussion</span>
+<span class="callout-header">Challenge</span>
 <div id="your-turn-4.1" class="callout-inner">
 <h3 class="callout-title">Your turn 4.1</h3>
 <div class="callout-content">
@@ -439,11 +439,11 @@ we usually plot the logarithm of RNA-seq counts. We’ll plot the Sample
 on the X axis and log2 Counts on the y axis. We can log the Counts
 within the <code>aes()</code>. The sample labels are also overlapping
 each other, we will show how to fix this later.</p>
-<div id="your-turn-4.2" class="callout discussion">
+<div id="your-turn-4.2" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<span class="callout-header">Discussion</span>
+<span class="callout-header">Challenge</span>
 <div id="your-turn-4.2" class="callout-inner">
 <h3 class="callout-title">Your turn 4.2</h3>
 <div class="callout-content">
@@ -468,11 +468,11 @@ each other, we will show how to fix this later.</p>
 removed. This is because some of the genes have a count of zero in the
 samples and a log of zero is undefined. We can add +1 to every count to
 avoid the zeros being dropped (‘psuedo-count’).</p>
-<div id="your-turn-4.3" class="callout discussion">
+<div id="your-turn-4.3" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<span class="callout-header">Discussion</span>
+<span class="callout-header">Challenge</span>
 <div id="your-turn-4.3" class="callout-inner">
 <h3 class="callout-title">Your turn 4.3</h3>
 <div class="callout-content">
@@ -529,11 +529,11 @@ to make a violin plot using the <code>geom_violin()</code> function.</p>
 </div>
 <hr></section><section><h2 class="section-heading" id="colouring-by-categories">Colouring by categories<a class="anchor" aria-label="anchor" href="#colouring-by-categories"></a></h2>
 <hr class="half-width"><p>Let’s add a different colour for each sample.</p>
-<div id="your-turn-4.5" class="callout discussion">
+<div id="your-turn-4.5" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<span class="callout-header">Discussion</span>
+<span class="callout-header">Challenge</span>
 <div id="your-turn-4.5" class="callout-inner">
 <h3 class="callout-title">Your turn 4.5</h3>
 <div class="callout-content">
@@ -543,11 +543,11 @@ option for colour.</p>
 </div>
 </div>
 </div>
-<div id="your-turn-4.6" class="callout discussion">
+<div id="your-turn-4.6" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<span class="callout-header">Discussion</span>
+<span class="callout-header">Challenge</span>
 <div id="your-turn-4.6" class="callout-inner">
 <h3 class="callout-title">Your turn 4.6</h3>
 <div class="callout-content">
@@ -567,11 +567,11 @@ inside <code>aes()</code>.</p>
 <p>Colouring the edges wasn’t quite what we had in mind. Look at the
 help for <code>geom_boxplot</code> to see what other aesthetic we could
 use. Let’s try <code>fill =</code> instead.</p>
-<div id="your-turn-4.7" class="callout discussion">
+<div id="your-turn-4.7" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<span class="callout-header">Discussion</span>
+<span class="callout-header">Challenge</span>
 <div id="your-turn-4.7" class="callout-inner">
 <h3 class="callout-title">Your turn 4.7</h3>
 <div class="callout-content">
@@ -714,11 +714,11 @@ thousands of genes, but most of them are usually not very interesting,
 so we may want to filter them.</p>
 <p>Here, we choose 8 genes with the highest counts summed across all
 samples. They are listed here.</p>
-<div id="your-turn-4.10" class="callout discussion">
+<div id="your-turn-4.10" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<span class="callout-header">Discussion</span>
+<span class="callout-header">Challenge</span>
 <div id="your-turn-4.10" class="callout-inner">
 <h3 class="callout-title">Your turn 4.10</h3>
 <div class="callout-content">
@@ -818,11 +818,11 @@ of this tutorial, but totally worth learning about independently!).</p>
 </div>
 <div class="section level3">
 <h3 id="faceting">Faceting<a class="anchor" aria-label="anchor" href="#faceting"></a></h3>
-<div id="your-turn-4.12" class="callout discussion">
+<div id="your-turn-4.12" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<span class="callout-header">Discussion</span>
+<span class="callout-header">Challenge</span>
 <div id="your-turn-4.12" class="callout-inner">
 <h3 class="callout-title">Your turn 4.12</h3>
 <div class="callout-content">
@@ -847,11 +847,11 @@ front of the column we want to facet on.</p>
 <hr class="half-width"><p>In the example over, boxplots are not suitable because we only have
 two values per group. Let’s plot the individual points instead using the
 <code>geom_point()</code> to make a scatter plot.</p>
-<div id="your-turn-4.13" class="callout discussion">
+<div id="your-turn-4.13" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<span class="callout-header">Discussion</span>
+<span class="callout-header">Challenge</span>
 <div id="your-turn-4.13" class="callout-inner">
 <h3 class="callout-title">Your turn 4.13</h3>
 <div class="callout-content">
@@ -875,11 +875,11 @@ which adds a small amount of random variation to the location of each
 point so they do not overlap. If is also quite common to combine jitter
 plots with other types of plot, for example, <a href="https://simplystatistics.org/2019/02/21/dynamite-plots-must-die/" class="external-link">jitter
 with boxplot</a>.</p>
-<div id="your-turn-4.14" class="callout discussion">
+<div id="your-turn-4.14" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<span class="callout-header">Discussion</span>
+<span class="callout-header">Challenge</span>
 <div id="your-turn-4.14" class="callout-inner">
 <h3 class="callout-title">Your turn 4.14</h3>
 <div class="callout-content">
@@ -966,7 +966,7 @@ any links that you are not going to use.
           Previous: Formatting the Data
         </a>
         <a class="chapter-link float-end" href="../instructor/ggplot2-customisation.html" rel="next">
-          Next: Extra ggplot2...
+          Next: Extra ggplot2 Customisation...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -992,7 +992,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors.</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a> Custom fork by <a href="https://www.melbournebioinformatics.org.au/" class="external-link">Melbourne Bioinformatics</a>.</p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/melbournebioinformatics/uom-varnish/tree/main" class="external-link">varnish (1.1.3)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.21.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/melbournebioinformatics/uom-varnish/tree/main" class="external-link">varnish (1.1.3)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1013,9 +1013,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "melbournebioinformatics.github.io/uom-varnish/instructor/ggplot2-intro.html",
   "identifier": "melbournebioinformatics.github.io/uom-varnish/instructor/ggplot2-intro.html",
-  "dateCreated": "2026-08-19",
-  "dateModified": "2026-08-19",
-  "datePublished": "2026-08-25"
+  "dateCreated": "2026-09-01",
+  "dateModified": "2026-09-01",
+  "datePublished": "2026-09-01"
 }
 
   </script><script>
